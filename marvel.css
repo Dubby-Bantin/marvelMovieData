@@ -1,0 +1,279 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cinzel+Decorative:wght@400;700;900&family=Rubik+Lines&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: black ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: max-content;
+}
+
+body::-webkit-scrollbar{
+    border-radius: 20px;
+    background: black;
+}
+
+body::-webkit-scrollbar-thumb{
+    background: linear-gradient(90deg, #607482 0% 1%, #000 45% 100%) ;
+    border-radius: 20px;
+}
+
+body::-webkit-scrollbar-track{
+    background: #17171e;
+}
+
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.searchRegion{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: black;
+    border-radius: 50px;
+    width: 70rem;
+    height: 3rem;
+    box-shadow:  -1px -.7px 4px 2px #607482;  
+    margin-bottom: 5rem;
+}
+
+.searchRegion input{
+    font-family: "Cinzel Decorative", serif;
+    font-weight: 600;
+    font-size: 1.4rem;
+    color: #607482;
+    width: 70rem;
+    border-radius: 50px 0px 0 50px;
+    border: 0;
+    background: black;
+    outline: 0;
+    padding: .35rem 2rem;
+}
+
+.searchRegion button{
+    color: #607482;
+    border-radius: 0px 50px 50px 0px;
+    background: 0;
+    border: 0;
+    width: 5rem;
+    padding: .63rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.main{
+    display: flex;
+    justify-content: center;
+}
+
+.showSeries{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.showSeries button{
+    background: black;
+    box-shadow:  -1px -.7px 4px 2px #607482;    
+    border: 0;
+    border-radius: 5px;
+    padding: .8rem 1.5rem;
+    font-size: 1.2rem;
+    color: #607482 ;
+    cursor: pointer;
+    font-family: "Cinzel Decorative", serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.showMovies button:hover{
+    box-shadow:  -1px -.7px 4px 4px #607482;    
+}
+
+
+.displayCards-region {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: center;
+    align-items: center;
+    justify-content: center;
+    font-family: "Rubik Lines", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    color: #fff;
+    text-shadow: 10px 3px 5px black;
+    padding: 2rem 5rem;
+    gap: 1rem;
+}
+
+.moviesActed{
+    text-align: center;
+    margin-bottom: 2rem;
+    font-family: "Cinzel Decorative", serif;
+    font-weight: 900;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    color: #607482 ;
+}
+
+.movie{
+    margin-bottom: .1rem;
+    font-size: 1.5rem;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    color: #607482 ;
+}
+
+.displayCards-region .imageBox{
+    box-shadow:  -1px -.7px 4px 2px #607482;    
+    width: 100%;
+    height: 28rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 6px;
+    justify-content: center;
+    overflow: hidden;
+    cursor: pointer;
+    text-align: center;
+}
+
+.displayCards-region .imageBox img{
+    height: 100%;
+    width: 100%;
+    border-radius: 6px;
+    transition: transform  .3s linear, opacity .3s linear;
+}
+
+.displayCards-region .imageBox:hover img{
+    transform: scale(1.11);
+    opacity: .6;
+}
+
+.displayCards-region .imageBox .avengerDescription{
+    position: absolute;
+    margin-top: 15rem;
+    width: 19rem;
+    opacity: 0;
+    transition: opacity .5s linear, transform .4s ease-in-out;
+}
+
+
+.displayCards-region .imageBox:hover .avengerDescription{
+    transform: translateY(-100px);
+    opacity: 1;
+}
+.displayCards-region .imageBox .avengerName{
+    font-size: 1.2rem;
+}
+
+@media (max-width: 1300px){
+    .displayCards-region .imageBox{
+        width: 19rem;
+    }
+}
+
+@media (max-width: 1000px){
+    .displayCards-region {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    .searchRegion{
+        width: 20rem;
+        height: 2.5rem;
+        border-radius: .5rem;
+    }
+    
+    .searchRegion input{
+        font-weight: 600;
+        font-size: 1rem;
+        width: 15rem;
+        padding: .33rem 2rem;
+    }
+
+
+    .movie{
+        font-size: 1rem;
+        font-weight: 600;
+    }
+
+    .moviesActed{
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .displayCards-region .imageBox{
+        width: 20rem;
+        height: 25rem;
+    }
+
+    
+    .displayCards-region .imageBox .avengerDescription{
+        margin-top: 10rem;
+    }
+
+    
+    .displayCards-region .imageBox:hover .avengerDescription{
+        transform: translateY(-20px);
+        opacity: 1;
+    }
+}
+
+
+
+
+@media (max-width: 500px){
+    .displayCards-region {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+
+    .searchRegion{
+        width: 20rem;
+        height: 2.5rem;
+        border-radius: .5rem;
+    }
+    
+    .searchRegion input{
+        font-weight: 600;
+        font-size: 1rem;
+        width: 15rem;
+        padding: .33rem 2rem;
+    }
+
+
+    .movie{
+        font-size: 1rem;
+        font-weight: 600;
+    }
+
+    .moviesActed{
+        grid-template-columns: repeat(1,1fr);
+    }
+
+    .displayCards-region .imageBox{
+        width: 20rem;
+        height: 25rem;
+    }
+
+    
+    .displayCards-region .imageBox .avengerDescription{
+        margin-top: 10rem;
+    }
+
+    
+    .displayCards-region .imageBox:hover .avengerDescription{
+        transform: translateY(-20px);
+        opacity: 1;
+    }
+}
